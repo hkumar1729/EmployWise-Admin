@@ -26,9 +26,8 @@ This project is a frontend React-based web application that fetches and displays
 ### 1. Clone the Repository
 
 ```bash
-git https://github.com/hkumar1729/ReqRes_Hub
-cd ReqRes_Hub
-```
+git https://github.com/hkumar1729/EmployWise-Admin
+cd EmployWise-Admin
 
 ---
 
