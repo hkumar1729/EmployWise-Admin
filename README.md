@@ -52,9 +52,9 @@ npm run dev
 ```
 - Now open your browser and visit http://localhost:5173.
 
-- Website is deployed on vercel visit: https://employ-wise-admin.vercel.app/login
+- Website is deployed on vercel, visit https://employ-wise-admin.vercel.app/login
 - Use credentials to login: email: eve.holt@reqres.in and password: cityslicka
 
-### 5. Consideration
+### 4. Consideration
 - The "Edit User" feature is implemented inside the user card instead of a separate page for a more easy editing experience allows users to quickly modify details without navigating away.
 
