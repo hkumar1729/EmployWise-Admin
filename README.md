@@ -43,7 +43,7 @@ npm install
 
 **Create an .env file in the root directory and add the following:**:
 ```bash
-VITE_BACKEND_URL=https://reqres.in/
+VITE_BACKEND_URL=https://reqres.in
 ```
 
 **Start the Website**:
