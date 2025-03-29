@@ -28,20 +28,18 @@ This project is a frontend React-based web application that fetches and displays
 ```bash
 git https://github.com/hkumar1729/EmployWise-Admin
 cd EmployWise-Admin
+```
 
 ---
 
 ### 2. Install Dependencies
 
-Install backend and frontend dependencies separately:
-
-**For Frontend**:
+**Run**:
 ```bash
-cd client
 npm install
 ```
 
-### 4. Start the Project
+### 3. Start the Project
 
 **Create an .env file in the root directory and add the following:**:
 ```bash
