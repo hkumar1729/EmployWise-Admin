@@ -55,6 +55,9 @@ npm run dev
 ```
 
 ---
-Open your browser and visit http://localhost:5173.
+- Open your browser and visit http://localhost:5173.
+
+- Website is deployed on vercel visit: https://employ-wise-admin.vercel.app/login
+- Use credentials to login: email: eve.holt@reqres.in and password: cityslicka
 
 
