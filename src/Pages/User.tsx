@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { User } from "../types/user";
 import { ApiResponse } from "../types/apiResponse";
 import { Appbar } from "../Components/Appbar";
+import { Avatar } from "../Components/Avatar";
 
 export default function Signup() {
     const navigate = useNavigate();
@@ -136,11 +137,7 @@ export default function Signup() {
                                 key={user.id}
                                 className="w-72 p-3 text-center border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
                             >
-                                <img
-                                    src={user.avatar}
-                                    alt={`${user.first_name}'s avatar`}
-                                    className="inline-block w-24 h-24 rounded-full mb-4"
-                                />
+                                <Avatar src={user.avatar} />
                                 {editingUser?.id === user.id ? (
                                     <>
                                         <input
