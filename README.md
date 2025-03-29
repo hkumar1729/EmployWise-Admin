@@ -57,8 +57,4 @@ npm run dev
 ---
 Open your browser and visit http://localhost:5173.
 
-**API Considerations**
-- The application fetches user data from an API using authentication via a token stored in localStorage.
-- Ensure the backend API supports pagination (/api/users?page=number).
-- User update requests (PUT) must return updated user details.
 
