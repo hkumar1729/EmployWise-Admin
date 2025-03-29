@@ -34,8 +34,9 @@ export default function Login(){
     }
 
 
-    return<div className="grid grid-cols-1 justify-center items-center md:grid-cols-2">
-        <div className="flex flex-col justify-center items-center">
+    return <div className="grid grid-cols-1 mt-40 justify-center items-center md:grid-cols-2 md:mt-0">
+        <div className="flex flex-col flex-wrap justify-center items-center">
+            <Heading label={'Login'}/>
             <Heading label={'Enter your credentials'}/>
             <Inputfield onchange={(e)=>{setInputs((c:signInParam)=>({...c, email:e.target.value}))}} label={'Email'} placeholder={'John@gmail.com'} type={'text'}/>
             <Inputfield onchange={(e)=>{setInputs((c:signInParam)=>({...c, password:e.target.value}))}} label={'Password'} placeholder={'•••••••••'} type={'password'}/>
