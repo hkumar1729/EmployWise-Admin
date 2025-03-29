@@ -65,13 +65,18 @@ export default function Signup() {
     const handleSave = async () => {
         if (!editingUser) return;
 
+        if (!editingUser.first_name.trim() || !editingUser.last_name.trim() || !editingUser.email.trim()) {
+            alert("All fields must be filled before saving.");
+            return;
+        }
+
         try {
             const response = await axios.put(
                 `${import.meta.env.VITE_BACKEND_URL}/api/users/${editingUser.id}`,
                 {
-                    first_name: editingUser.first_name,
-                    last_name: editingUser.last_name,
-                    email: editingUser.email
+                    first_name: editingUser.first_name.trim(),
+                    last_name: editingUser.last_name.trim(),
+                    email: editingUser.email.trim()
                 },
                 {
                     headers: {
