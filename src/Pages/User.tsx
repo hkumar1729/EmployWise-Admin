@@ -141,6 +141,7 @@ export default function Signup() {
                                         <input
                                             type="text"
                                             value={editingUser.first_name}
+                                            placeholder="First Name"
                                             onChange={(e) =>
                                                 setEditingUser({ ...editingUser, first_name: e.target.value })
                                             }
@@ -149,6 +150,7 @@ export default function Signup() {
                                         <input
                                             type="text"
                                             value={editingUser.last_name}
+                                            placeholder="Last Name"
                                             onChange={(e) =>
                                                 setEditingUser({ ...editingUser, last_name: e.target.value })
                                             }
@@ -157,6 +159,7 @@ export default function Signup() {
                                         <input
                                             type="text"
                                             value={editingUser.email}
+                                            placeholder="Email"
                                             onChange={(e) =>
                                                 setEditingUser({ ...editingUser, email: e.target.value })
                                             }
