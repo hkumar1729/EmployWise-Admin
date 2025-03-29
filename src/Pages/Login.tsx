@@ -1,15 +1,13 @@
-import { Quote } from "../Components/WelcomeNote";
+import { Note } from "../Components/WelcomeNote";
 import {Button} from "../Components/Button"
 import { Inputfield } from "../Components/Inputfield";
 import { Heading } from "../Components/Heading";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { signInParam } from "../types/signin";
 
-type signInParam = {
-    email: string,
-    password: string,
-}
+
 export default function Login(){
     const navigate = useNavigate()
     const [input, setInputs] = useState<signInParam>({
@@ -44,7 +42,7 @@ export default function Login(){
             <Button onclick={sendRequest} label={'Sign In'}/>
         </div>
         <div className="hidden md:block">
-         <Quote label={"Welcome"}/>
+         <Note label={"Welcome"}/>
         </div>
     </div>
 }
