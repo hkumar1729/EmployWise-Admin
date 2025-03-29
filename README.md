@@ -58,3 +58,6 @@ npm run dev
 ### 4. Consideration
 - The "Edit User" feature is implemented inside the user card instead of a separate page for a more easy editing experience allows users to quickly modify details without navigating away.
 
+### Conclusion
+ - This project provides a streamlined and interactive way to manage users through a React-based frontend. It incorporates essential        functionalities such as authentication, pagination, search, filtering, and user management (edit and delete). The decision to integrate the "Edit User" feature within the user card enhances usability by allowing quick modifications without navigating away from the main interface. The application is designed to be scalable, easily extendable, and user-friendly, ensuring a smooth experience for both developers and end-users.
+
