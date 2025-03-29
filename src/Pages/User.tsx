@@ -110,7 +110,7 @@ export default function Signup() {
 
     return ( <>
         <Appbar/>
-        <div className="font-sans text-center flex flex-col min-h-screen p-16">
+        <div className="font-sans text-center flex flex-col min-h-screen pb-12 pt-4 pl-4 pr-4">
             <h1 className="text-3xl font-bold mb-6">Hello ReqRes users!</h1>
 
             <div className="mb-6">
@@ -119,7 +119,7 @@ export default function Signup() {
                     placeholder="Search by name or email..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="border pl-2 pt-1 pb-1 rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="border pl-2 pt-1 pb-1 rounded-lg w-80 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
             </div>
 
@@ -193,7 +193,7 @@ export default function Signup() {
                         ))}
                     </div>
                 ) : (
-                    <p className="text-gray-500">No users</p>
+                    <p className="text-gray-500">No user found</p>
                 )}
 
                 {/* Pagination */}

@@ -27,8 +27,12 @@ export default function Login(){
             alert("Login Successfull!!!")
             localStorage.setItem("token", `Bearer ${token}`)
             navigate(`/users?page=1`)
-        }catch(e: any){
-            alert(e.response.data.error)
+        }catch(e: unknown){
+            if (e instanceof Error && "response" in e && e.response && typeof e.response === "object") {
+                alert((e.response as { data?: { error?: string } })?.data?.error || "An error occurred");
+            } else {
+                alert("Something went wrong");
+            }
         }
         
     }
