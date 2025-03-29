@@ -122,7 +122,7 @@ export default function Signup() {
         <div className="font-sans text-center flex flex-col min-h-screen pb-12 pt-4 pl-4 pr-4">
             <h1 className="text-3xl font-bold mb-6">Hello ReqRes users!</h1>
 
-            <div className="mb-6">  //search-bar
+            <div className="mb-6">  {/* search-bar */}
                 <input
                     type="text"
                     placeholder="Search by name or email..."
@@ -132,7 +132,7 @@ export default function Signup() {
                 />
             </div>
 
-            // user display after filter/search
+            {/* user display after filter/search */}
             <div className="flex-1 flex flex-col justify-between">
                 {filteredUsers.length > 0 ? (
                     <div className="flex flex-wrap justify-center gap-6">
@@ -205,7 +205,7 @@ export default function Signup() {
                     <p className="text-gray-500">No user found</p>
                 )}
 
-                // pagination
+                {/* pagination */}
                 <div className="flex justify-center items-center mt-8 space-x-4 pb-6">
                     <button
                         onClick={handlePrevious}
