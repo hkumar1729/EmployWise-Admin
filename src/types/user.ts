@@ -1,3 +1,4 @@
+// user interface for fetched data
 export interface User {
     id: number;
     email: string;

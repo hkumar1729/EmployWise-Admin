@@ -15,6 +15,7 @@ export default function Login(){
         password:""
     })
 
+    // login
     async function sendRequest() {
         try{
             const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/login`,input,{
@@ -37,7 +38,7 @@ export default function Login(){
         
     }
 
-
+    // login page component
     return <div className="grid grid-cols-1 mt-40 justify-center items-center md:grid-cols-2 md:mt-0">
         <div className="flex flex-col flex-wrap justify-center items-center">
             <Heading label={'Login'}/>
