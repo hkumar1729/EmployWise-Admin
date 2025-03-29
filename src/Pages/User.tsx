@@ -5,13 +5,14 @@ import { User } from "../types/user";
 import { ApiResponse } from "../types/apiResponse";
 import { Appbar } from "../Components/Appbar";
 
-
 export default function Signup() {
     const navigate = useNavigate();
     const [users, setUsers] = useState<User[]>([]);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
     const [editingUser, setEditingUser] = useState<User | null>(null);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
 
     useEffect(() => {
         if (localStorage.getItem("token")) {
@@ -39,6 +40,15 @@ export default function Signup() {
             navigate(`/login`);
         }
     }, [page, navigate]);
+
+    // Add useEffect for filtering users based on search term
+    useEffect(() => {
+        const filtered = users.filter(user => 
+            `${user.first_name} ${user.last_name}`.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            user.email.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredUsers(filtered);
+    }, [users, searchTerm]);
 
     const handlePrevious = () => {
         if (page > 1) setPage(page - 1);
@@ -73,7 +83,6 @@ export default function Signup() {
             setUsers(users.map(user => 
                 user.id === editingUser.id ? { ...user, ...response.data } : user
             ));
-    
             setEditingUser(null);
         } catch (error) {
             console.error("Error updating user:", error);
@@ -104,10 +113,20 @@ export default function Signup() {
         <div className="font-sans text-center flex flex-col min-h-screen p-16">
             <h1 className="text-3xl font-bold mb-6">Hello ReqRes users!</h1>
 
+            <div className="mb-6">
+                <input
+                    type="text"
+                    placeholder="Search by name or email..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="border pl-2 pt-1 pb-1 rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+            </div>
+
             <div className="flex-1 flex flex-col justify-between">
-                {users.length > 0 ? (
+                {filteredUsers.length > 0 ? (
                     <div className="flex flex-wrap justify-center gap-6">
-                        {users.map((user) => (
+                        {filteredUsers.map((user) => (
                             <div
                                 key={user.id}
                                 className="w-72 p-3 text-center border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
