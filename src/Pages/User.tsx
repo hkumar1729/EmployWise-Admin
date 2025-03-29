@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { User } from "../types/user";
 import { ApiResponse } from "../types/apiResponse";
+import { Appbar } from "../Components/Appbar";
 
 
 export default function Signup() {
@@ -98,7 +99,8 @@ export default function Signup() {
         }
     };
 
-    return (
+    return ( <>
+        <Appbar/>
         <div className="font-sans text-center flex flex-col min-h-screen p-16">
             <h1 className="text-3xl font-bold mb-6">Hello ReqRes users!</h1>
 
@@ -108,7 +110,7 @@ export default function Signup() {
                         {users.map((user) => (
                             <div
                                 key={user.id}
-                                className="w-72 p-6 text-center border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
+                                className="w-72 p-3 text-center border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
                             >
                                 <img
                                     src={user.avatar}
@@ -150,8 +152,7 @@ export default function Signup() {
                                     </>
                                 ) : (
                                     <>
-                                        <p className="font-semibold text-lg">{user.first_name}</p>
-                                        <p className="font-semibold text-lg">{user.last_name}</p>
+                                        <p className="font-semibold text-lg">{user.first_name} {user.last_name}</p>
                                         <p className="text-gray-600 text-sm">{user.email}</p>
                                         <div className="mt-4 flex justify-center space-x-2">
                                             <button
@@ -198,5 +199,6 @@ export default function Signup() {
                 </div>
             </div>
         </div>
+    </>
     );
 }
